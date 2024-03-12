@@ -1,0 +1,38 @@
+.screenshots {
+    @include section();
+    background-color: $white;
+
+
+    &__title {
+        @include h2();
+    }
+
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+
+        @media ($desktop) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .screenshot {
+            margin-bottom: 2.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+
+            @media ($desktop) {
+                flex-basis: calc(50% - 0.8rem);
+            }
+
+            &:nth-child(n + 3) {
+                margin-top: 3rem;
+            }
+        }
+    }
+}
